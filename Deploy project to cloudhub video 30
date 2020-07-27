@@ -1,0 +1,120 @@
+Deploying to the cloudHub
+
+! Anypoint --- choose your project ------anypoint platform -----publish exchange or 
+															publish cloudHub
+					Deploy application
+					give unique nameame  example al-emp=onboard,sapi
+- 					Deploy application
+Runtime manager  ---
+					choose the file 
+					
+					
+					
+					
+					
+					
+					load balance  
+					
+API Management
+	Publish Api to exchange
+	Import to API Manager
+	Configure anypoint business group client ID, client secret properties 
+	Enable autodiscovery
+	apply policies 
+	
+	
+	Ramelfile from Design center imported to Api management and 
+	
+1 Publish Api to exchange
+	Go To design center and publish to exchange 
+	
+	Go to exchange  click the generated api -  see all documentations
+	
+	exchange has all the connectors, has all private
+	and external url
+
+2 Import to API Manager
+Go to API Manager 
+				manage API - Manage api from exchange 
+				search your api you imported
+				check mule version 4 
+				update the domain name what you generated 
+				save
+3 Configure anypoint business group client ID, client secret properties 				
+				copy autodiscovery _ 
+				go to anypoint  go to global and create new global config
+				search Api ayutorization and select 
+				provide apiid --autodiscovery
+				filename ---- your flowname with main
+				
+				Go to windows prefernces -api manager
+Anypoint platform --access manager select your group 
+				
+				copy client Id and Client secrete
+				 Go to anypoint - windows =prefernces -api manager
+				 paste  client Id and Client secrete
+we have to deploy the application from anypoint studio because of updates 
+         Anypoint --- choose your project ------anypoint platform -----publish cloudHub
+			deploy application
+			go to api manager and it is Active
+	
+
+4 apply policies 	
+			Go to  api manager - automated policies
+			select apply policies
+			
+			select Basic authentication -simple
+			select the last version of it 
+			click configure policy 
+			then set new username and password for the user
+			
+set the username password to postman
+
+video 31
+
+1 client ID enforcement 
+	1 create client application for api in exchange
+	
+	go to exchange ---click Request access 
+	select API Instance number
+	select Application and create a new application
+	
+	2 use client id and client secret to consume this Api
+	Go to posteman -- header - create Client_Id and Client_secret
+	Run it 
+	
+	
+	
+2 cors (cross origin resource sharing 
+3 Rate limiting 
+4 Rate limiting  SLA Based
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
