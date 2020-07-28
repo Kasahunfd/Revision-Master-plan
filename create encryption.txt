@@ -1,0 +1,26 @@
+to encrypt password in anypointstudio: there are two ways
+
+
+1. Go to Anypoint studio -> Help->install newsoftwarea and put the below details in the pop up window.
+
+Anypoint Enterprise Security
+http://security-update-site-1.4.s3.amazonaws.com, the go to the external properties-> openwith-> mule properties editor
+
+
+	And the other way is:
+
+Go to files explorer look for the C:\Windows\System32\cmd.exe -> secure properties tool -> CMD and put->java -jar secure-properties-tool.jar file encrypt Blowfish CBC abcdefghijklmnop db-dev.yaml db-secure-dev.yaml->
+inter. then go back to the file explorer
+
+
+I have given a jar file with name secure-properties-tool.jar.  This jar can also be downloaded from following documentation page of mulesoft
+https://docs.mulesoft.com/mule-runtime/4.1/secure-configuration-properties
+
+We can use following command : 
+
+java -jar secure-properties-tool.jar file <encrypt|decrypt> <algorithm> <mode> <key> <input file> <output file>
+
+java -jar secure-properties-tool.jar file encrypt Blowfish CBC abcdefghijklmnop db-dev.yaml db-secure-dev.yaml
+
+Now, copy the generated db-secure-dev.yaml into src/main/resources.
+
