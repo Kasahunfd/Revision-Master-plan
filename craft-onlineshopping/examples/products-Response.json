@@ -1,0 +1,13 @@
+{
+              "statusCode": 200,
+              "message": [
+                            {
+                              "categoryid": 0,
+                              "description": "string",
+                              "name": "string",
+                              "price": 0,
+                              "productid": 0,
+                              "video_url": "string"
+                            }
+                          ]
+                        }

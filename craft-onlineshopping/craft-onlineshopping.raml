@@ -1,0 +1,261 @@
+#%RAML 1.0
+title: champ-onlineshop
+version: v1
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/68966c43-3c22-4116-9a8c-ce497e56f806/ # baseUri: http://localhost:8081/champ-onlineshop/{version}
+baseUriParameters:
+  environment:
+    description: dev,test,load,prod
+    enum: [tank-dev-champ-onlineshop.us-e2.cloudhub.io/, tank-test-champ-onlineshop.us-e2.cloudhub.io/, tank-load-champ-onlineshop.us-e2.cloudhub.io/,
+    tank-prod-champ-onlineshop.us-e2.cloudhub.io/]
+/categories:
+  get:
+    description: get all product categories
+    displayName: product categories
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/categories-response.json
+      401:
+        body:
+          application/json:
+            example: !include  /examples/unauthorized.json           
+      
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json  
+/category/{id}:
+  uriParameters:
+    id:
+      required: true
+      type: integer
+      example: 10    
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/categories-response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json
+/orders:
+  get:
+    description: get all orders
+    displayName: orders
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/orders-Response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json     
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json    
+  post:
+    description: create order
+    body:
+      application/json:
+        example: !include /examples/create-Orders-Request.json
+    responses:
+      201:
+        body:
+          application/json:
+            example: !include /examples/create-Response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json    
+/order/{uid}:
+  uriParameters:
+    uid:
+      required: true
+      type: integer
+      example: 10   
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/orders-Response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json   
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json    
+/order/{id}:
+  uriParameters:
+    id:
+      required: true
+      type: integer
+      example: 10   
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/orders-Response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json     
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json  
+/products:
+  get:
+    description: get all products
+    displayName: products
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/products-Response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json     
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json 
+/product/{id}:
+  uriParameters:
+    id:
+      required: true
+      type: integer
+      example: 10 
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/products-Response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json      
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json  
+/Users:
+  get:
+    description: get all users
+    displayName: users
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/users-Response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json       
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json 
+  post:
+    description: create user
+    body:
+      application/json:
+        example: !include /examples/create-User-Request.json
+    responses:
+      201:
+        body:
+          application/json:
+            example: !include /examples/create-Response.json
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json     
+/user/{id}:
+  uriParameters:
+    id:
+      required: true
+      type: integer
+      example: 10   
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/usersid-Response.raml
+      401:
+        body:
+          application/json:
+            example: !include /examples/unauthorized.json      
+      403:
+        body:
+          application/json:
+           example: !include /examples/Forbidden.json
+      404:
+        body:
+          application/json:
+           example: !include /examples/Not-Found.json   
+
+
+
